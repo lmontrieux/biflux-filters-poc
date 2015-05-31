@@ -1,0 +1,17 @@
+policy SimplePolicy {
+	subjects { Bob }
+	transformation calendar
+	
+	rule RuleRead {
+		action read
+		resource /calview/event/starttime
+	}
+	
+	rule Rule1 {
+		action create
+		action update
+		action delete
+		resource /calendar/*
+		matching-by /name/text()
+	}
+}

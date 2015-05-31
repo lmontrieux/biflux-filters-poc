@@ -1,0 +1,8 @@
+<!DOCTYPE calview [
+		  <!ELEMENT calview (event*)>
+		  <!ELEMENT event (starttime, endtime, name, location)>
+		  <!ELEMENT starttime (#PCDATA)>
+		  <!ELEMENT endtime (#PCDATA)>
+		  <!ELEMENT name (#PCDATA)>
+		  <!ELEMENT location (#PCDATA)>
+]>

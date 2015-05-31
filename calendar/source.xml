@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<calendar>
+  <event>
+    <starttime>2014-11-20_14:00</starttime>
+    <endtime>2014-11-20_15:00</endtime>
+    <name>Group meeting</name>
+    <note>Don't forget your slides</note>
+    <location>Room 1611</location>
+    <private>False</private>
+    <participant>
+      <name>Chong Li</name>
+      <email>me@chong.li</email>
+    </participant>
+    <participant>
+      <name>Zhenjiang Hu</name>
+      <email>hu@nii.ac.jp</email>
+    </participant>
+    <participant>
+      <name>Lionel Montrieux</name>
+      <email>lionel@nii.ac.jp</email>
+      <phone>+81-3-5520-6896</phone>
+    </participant>
+  </event>
+  <event>
+    <starttime>2014-11-21_20:00</starttime>
+    <endtime>2014-11-20_22:00</endtime>
+    <name>Dinner</name>
+    <note>Bring a gift</note>
+    <location>Japanese restaurant</location>
+    <private>True</private>
+  </event>
+  <event>
+    <starttime>now</starttime>
+    <endtime>later</endtime>
+    <name>Name</name>
+    <note>nothing</note>
+    <location>Here</location>
+    <private>False</private>
+  </event>
+</calendar>

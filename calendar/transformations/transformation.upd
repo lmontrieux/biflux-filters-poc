@@ -1,0 +1,31 @@
+(: bidirectional transformation for the calendar.
+allows the user to edit only work (i.e. not private) events. Everything can be updated. Anf event added will be a work event :)
+
+import "source.dtd" as s
+import "view.dtd" as v
+
+$source = doc("source.xml")
+$view   = doc("view.xml")
+
+START = updateCalendar($source/calendar, $view/calview)
+
+PROCEDURE updateCalendar(source $source AS s:calendar, view $view AS v:calview) =
+
+UPDATE $event IN $source/event BY 
+	   MATCH  -> REPLACE IN $event/starttime WITH $starttime/text();
+	   		  	 REPLACE  $event/endtime WITH $endtime;
+				 REPLACE  $event/location WITH $location
+	   | UNMATCHV -> CREATE VALUE <event>
+	   	 		  	 			  		 <starttime/>
+										 <endtime/>
+										 <name/>
+										 <note>nothing</note>
+										 <location/>
+										 <private>False</private>
+								</event>
+	  | UNMATCHS -> DELETE .
+
+
+FOR VIEW event[$starttime AS v:starttime, $endtime AS v:endtime, $name AS v:name, $location AS v:location] IN $view/*
+MATCHING SOURCE BY $event/name VIEW BY $name
+WHERE private/text() = 'False'

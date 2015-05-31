@@ -1,0 +1,13 @@
+<!DOCTYPE calendar [
+		  <!ELEMENT calendar (event*)>
+		  <!ELEMENT event(starttime, endtime, name, note, location, private, participant*)>
+		  <!ELEMENT starttime (#PCDATA)>
+		  <!ELEMENT endtime (#PCDATA)>
+		  <!ELEMENT name (#PCDATA)>
+		  <!ELEMENT note (#PCDATA)>
+		  <!ELEMENT location (#PCDATA)>
+		  <!ELEMENT private (#PCDATA)>
+		  <!ELEMENT participant (name, email, phone?)>
+		  <!ELEMENT email (#PCDATA)>
+		  <!ELEMENT phone (#PCDATA)>
+]>
